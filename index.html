@@ -6,27 +6,27 @@
       <link rel=""Stylesheet" href="style.css">
       <title>Piha Advertisement</title>
     </head>
+
   <body>
-
-  <div class="ad-container">
-    <img src="assets/pihabeach _panorama.jpg" alt="Piha Beach" class="ad-image">
-    <div class="ad-text">
-      <span style="animation: changeColor 3s ease infinite;">Piha</span> is a beautiful destination.
-    <br>
-     Experience the <span style="animation: changeSize 3s ease infinite;">Wild</span> nature!
+    <div class="ad-container">
+      <img src="assets/pihabeach _panorama.jpg" alt="Piha Beach" class="ad-image">
+     <div class="ad-text">
+        <span style="animation: changeColor 3s ease infinite;">Piha</span> is a beautiful destination.
+      <br>
+      Experience the <span style="animation: changeSize 3s ease infinite;">Wild</span> nature!
+     </div>
+     <a href="http://www.piha.co.nz/" target="_blank" rel="noopener noreferrer" class="ad-link">Visit Piha</a>
     </div>
-   <a href="http://www.piha.co.nz/" target="_blank" rel="noopener noreferrer" class="ad-link">Visit Piha</a>
-  </div>
 
-  <script>
-    // JavaScript for second image zoom effect
-    const adImage = document.querySelector('.ad-image');
-    adImage.addEventListener('mouseover', function() {
-     this.style.transform = 'scale(1.1)';
-    });
-    adImage.addEventListener('mouseout', function() {
-     this.style.transform = 'scale(1)';
-    });
-  </script>
-</body>
+    <script>
+      // JavaScript for second image zoom effect
+      const adImage = document.querySelector('.ad-image');
+      adImage.addEventListener('mouseover', function() {
+      this.style.transform = 'scale(1.1)';
+      });
+     adImage.addEventListener('mouseout', function() {
+       this.style.transform = 'scale(1)';
+     });
+    </script>
+  </body>
 </html>
