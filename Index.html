@@ -1,90 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Piha Advertisement</title>
-<style>
-  /* Animation for changing appearance */
-  @keyframes changeAppearance {
-    0%, 50% { opacity: 1; visibility: visible; }
-    55%, 100% { opacity: 0; visibility: hidden; }
-  }
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name=""Viewpoint" content="width=device-width, initial-scale=1.0">
 
-  /* Animation for text color change */
-  @keyframes changeColor {
-    0%, 100% { color: #fff; }
-    50% { color: #00f; }
-  }
+            <title>My First Website</title>
 
-  /* Animation for text size change */
-  @keyframes changeSize {
-    0%, 100% { font-size: 24px; }
-    50% { font-size: 30px; }
-  }
+            <link rel=""Stylesheet" href="style.css">
 
-  /* Container styles */
-  .ad-container {
-    position: relative;
-    width: 100%;
-    height: 250px; /* Adjust height as needed */
-    overflow: hidden;
-    background-color: #000;
-    color: #fff;
-  }
+            <!--CSS Stylesheet file link here-->
 
-  /* Image styles */
-  .ad-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
+        </head>
+        <body>
+            <div class="content">
+                <img class="image-large" src="./assets/computing.webp" alt="Computing Photo" />
+                <H2>Web Development</H2>
+                <P>
+                    Web development is the act creating and maintaining websites and other web-based tools.
+                    It involves the use of many technologies to build and deliver web pages and applications innovation and long term sustainability.
+                </P>
+                <H2>Development tools</H2>
+                <table>
+                    <thead><th>Technology</th><th>Description</th></thead>
+                    <tr><td>IDE</td><td>..</td></tr>
+                    <tr><td>Git</td><td>..</td></tr>
+                    <tr><td>Web Browser</td><td>..</td></tr>
+                </table>
+            </div>
 
-  /* Text styles */
-  .ad-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    animation: changeAppearance 6s ease infinite; /* Adjust timing as needed */
-  }
+            <dev class="sidebar">
+                <h1>ISCG6420</h1>
+                <h3>Internet & Website Development</h3>
+                <p>
+                    IWD is a Level 6, second year course in the Bachelor of Computing Systems Graduate programme.
+                    Enrolled students will learn to develop sofisticated enterprise website using core web 
+                    technologies. This includes HTML, CSS, JS, JQuery, AJAX, XML, and JSON.
+                </p>
+            </dev>
 
-  /* Link styles */
-  .ad-link {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-  }
-</style>
-</head>
-<body>
-<div class="ad-container">
-  <img src="first_image.jpg" alt="Piha Beach" class="ad-image">
-  <div class="ad-text">
-    <span style="animation: changeColor 3s ease infinite;">Piha</span> is a beautiful destination.
-    <br>
-    Experience the <span style="animation: changeSize 3s ease infinite;">Wild</span> nature!
-  </div>
-  <a href="http://www.piha.co.nz/" target="_blank" rel="noopener noreferrer" class="ad-link">Visit Piha</a>
-</div>
-
-<script>
-  // JavaScript for second image zoom effect
-  const adImage = document.querySelector('.ad-image');
-  adImage.addEventListener('mouseover', function() {
-    this.style.transform = 'scale(1.1)';
-  });
-  adImage.addEventListener('mouseout', function() {
-    this.style.transform = 'scale(1)';
-  });
-</script>
-</body>
-</html>
+            <div class=""sidepanel">
+            
+            </div>
+        </body>
+    </html>
