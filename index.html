@@ -9,28 +9,31 @@
 
   <body>
     <header>
+      <div class="piha-image-container">
+        <a href="http://www.piha.co.nz" target="_blank">
+          <img src="assets/pihabeach_panorama.jpg" alt="Piha Beach" class="piha-image" id="image1">
+        </a>
+        <a href="http://www.piha.co.nz" target="_blank">
+          <img src="assets/rock_pushing.jpg" alt="Rock Pushing" class="piha-image" id="image2">
+        </a>
+      </div>
       <div class="left-text">
         <div style="position: absolute; top: 0; left: 0;" class="h1" id="text1">Piha</div>
         <div style="position: absolute; top: 0; left: 0;" class="h1" id="text2">The Scenic</div>
-    </div>
-    <div class="right-text">
+      </div>
+      <div class="right-text">
         <div class="h2" id="text3">Fun</div>
         <div class="h3" id="text4">Adventure</div>
-    </div>
-    <div class="piha-image-container">
-      <a href="http://www.piha.co.nz/" target="_blank">
-        <img src="assets/pihabeach_panorama.jpg" alt="Piha Beach" class="piha-image" id="image1">
-      </a>
-      <a href="http://www.piha.co.nz/" target="_blank">
-        <img src="assets/rock_pushing.jpg" alt="Rock Pushing" class="piha-image" id="image2">
-      </a>
-    </div>
-  </header>
+      </div>
+      <div class="name-text">
+        <div id="text5">1552620 Yongsuok Jung</div>
+      </div>
+    </header>
 
     <script>
-      var currentImage = 1; // 현재 이미지를 나타내는 변수
+      var currentImage = 1; // Variable representing the current image
       
-      // 이미지 전환 함수
+      // image conversion function
       function changeImage() {
         var image1 = document.getElementById('image1');
         var image2 = document.getElementById('image2');
@@ -39,12 +42,11 @@
         var text3 = document.getElementById('text3');
         var text4 = document.getElementById('text4');
     
-        // 현재 이미지를 변경
+        // change the current image
         if (currentImage === 1) {
           image1.style.opacity = '1';
-          //image1.classList.add('scale'); // 이미지1에 확대 클래스 추가
           image2.style.opacity = '0';
-          image2.classList.remove('scale'); // 이미지2에서 확대 클래스 제거
+          image2.classList.remove('scale'); // Remove zoom class from image 2
           text1.style.opacity = '1';
           text2.style.opacity = '0';
           text3.style.color = 'blue';
@@ -52,9 +54,8 @@
           currentImage = 2;
         } else {
           image1.style.opacity = '0';
-          //image1.classList.remove('scale'); // 이미지1에서 확대 클래스 제거
           image2.style.opacity = '1';
-          image2.classList.add('scale'); // 이미지2에 확대 클래스 추가
+          image2.classList.add('scale'); // Add zoom class from image 2
           text2.style.color = 'orange';
           text1.style.opacity = '0';
           text2.style.opacity = '1';
@@ -64,18 +65,64 @@
         }
       }
 
-      // 페이지 로드 시 초기 이미지와 텍스트를 보여줍니다.
-      window.onload = function() {
-        changeImage();
-      };
+      var currentImageIndex = 0; // Variable representing the index of the current image
 
-      // 일정 시간마다 이미지 전환
-      setInterval(changeImage, 2000); // 2초마다 변경되도록 설정 (단위: 밀리초)
-    </script>
+      // 이미지 전환 함수
+      function slideImage() {
+  
+        // Make the previous image transparent.
+        images[currentImageIndex].style.opacity = '0';
+  
+        // Update the index of the current image and move to the next image.
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        // Make the next image appear.
+        images[currentImageIndex].style.opacity = '1';
+
+        // Call the function again after a certain amount of time to switch to the next image.
+        setTimeout(slideImage, 2000); // Set to change every 2 seconds (unit: milliseconds)
+
+        // Speed up the transition at certain intervals
+        if (currentImageIndex % 1 === 0) {
+          setTimeout(slideImage, 500); // Fast transition time (0.5 seconds)
+
+        }
+      }
+
+        // Page reload function
+        function reloadPage() {
+        location.reload();
+        }
+      
+        // Show the initial image and text when the page loads.
+        window.onload = function() {
+          changeImage();
+        };
+
+        // Switch image at regular intervals
+        setInterval(changeImage, 2000); // 2초마다 변경되도록 설정 (단위: 밀리초)
+      </script>
 
       <content> <!-- custom -->
           <aside>
-              aside
+            <div class="static-image-container">
+              <img src="assets/Miter500.jpg" alt="kitchen4" class="static-image" id="kitchen4">
+              <!-- 리로드 버튼 -->
+              <button class="reload-button" onclick="reloadPage()">Reload</button>
+              <div class="slideshow">
+                <div class="slide">
+                  <img src="assets/kitchen1.jpg" alt="kitchen1">
+                </div>
+                <div class="slide">
+                    <img src="assets/kitchen2.jpg" alt="kitchen2">
+                </div>
+                <div class="slide">
+                    <img src="assets/kitchen3.jpg" alt="kitchen3">
+                </div>
+                <div class="name-text">
+                  <div id="text5">1552620 Yongsuok Jung</div>
+              </div>
+            </div>
+          </div>
           </aside>
           <main>
               main
