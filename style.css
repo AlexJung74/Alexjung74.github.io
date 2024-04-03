@@ -167,7 +167,7 @@ aside {
   width: 1100px; /* Set the image to fill the parent element */
   height: 700px; /* Set the image to fill the parent element */
   object-fit: contain; /* Set the image to fill the parent element while maintaining its proportions */
-  animation: slideAni 6s forwards ; 
+  animation: slideAni 15s forwards ; 
   
   }
 
