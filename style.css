@@ -46,23 +46,27 @@ main {
 }
 article {
   background-color:dodgerblue;
-  height: 500px;
-  margin: 16px;
+  height: 660px;
+  margin: 20px;
 }
 figure {
   background-color:lemonchiffon;
   height: 200px;
-  margin: 16px 40px;
+  margin: 0px 0px;
 }
 p {
   background-color: khaki;
-  height: 200px;
-  margin: 16px 40px;
+  height: 420px;
+  margin: 15px 20px;
 }
-section {
-  background-color: royalblue;
-  height: 150px;
-  margin: 16px;
+
+h4 {
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  color: #7a5ccc;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .piha-image-container {

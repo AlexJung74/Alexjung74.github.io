@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <html lang="en">
     <head>
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
@@ -68,7 +69,7 @@
       var currentImageIndex = 0; // Variable representing the index of the current image
 
       // 이미지 전환 함수
-      function slideImage() {
+      /*function slideImage() {
   
         // Make the previous image transparent.
         images[currentImageIndex].style.opacity = '0';
@@ -86,7 +87,7 @@
           setTimeout(slideImage, 500); // Fast transition time (0.5 seconds)
 
         }
-      }
+      }*/
 
         // Page reload function
         function reloadPage() {
@@ -106,7 +107,7 @@
           <aside>
             <div class="static-image-container">
               <img src="assets/Miter500.jpg" alt="kitchen4" class="static-image" id="kitchen4">
-              <!-- 리로드 버튼 -->
+              <!-- Reload Button -->
               <button class="reload-button" onclick="reloadPage()">Reload</button>
               <div class="slideshow">
                 <div class="slide">
@@ -125,19 +126,14 @@
           </div>
           </aside>
           <main>
-              main
               <article>
-                  article
                   <figure>
-                      figure
+                      <h4>Piha Lodge Booking System</h4>
                   </figure>
                   <p>
                       paragraph
                   </p>
               </article>
-              <section>
-                  section
-              </section>
           </main>
       </content>
       </body>
