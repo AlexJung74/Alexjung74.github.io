@@ -37,6 +37,17 @@ header {
     1px 1px 0 #000; /* Create a border effect by creating a shadow around the text */
 }
 
+/*nav*/
+ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+li{ 
+  display: inline;
+}
+/*end nav*/
+
 main {
   background-color: aqua;
   width: 80%;
