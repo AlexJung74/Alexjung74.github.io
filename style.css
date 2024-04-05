@@ -2,19 +2,19 @@ html {
   box-sizing: border-box;
   /*border: 1px solid #000;*/
   text-align: center;
-  padding-top: 10px;    /* 10px padding on top */
-  padding-right: 10px;  /* 10px padding on the right */
-  padding-left: 10px;   /* 10px padding on the left */
-  padding-bottom: 0px;  /* 0px padding at the bottom *//
-  background-color: #fef;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 10px;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-  border-radius: 10px;
+  padding: 10px; /* 통합적인 padding 적용 */
+  background-color: #feefef;
+  font-family: Geneva, Verdana, Tahoma, sans-serif;
+  font-size: 16px; /* 기본 글꼴 크기 조정 */
 }
 
+/* 모든 요소의 box-sizing 속성을 상속 */
+*, *:before, *:after {
+  box-sizing: inherit;
+  border-radius: 5px;
+}
+
+/* 헤더 스타일 */
 header {
   height: 170px;
   margin-bottom: 10px;
@@ -22,6 +22,7 @@ header {
   overflow: hidden;
 }
 
+/* 이름 텍스트 스타일 */
 .name-text {
   white-space: nowrap;
   position: absolute;
@@ -37,7 +38,7 @@ header {
     1px 1px 0 #000; /* Create a border effect by creating a shadow around the text */
 }
 
-/*nav*/
+/* 네비게이션 스타일 */
 ul{
   list-style-type:none;
   margin:0;
@@ -48,36 +49,258 @@ li{
 }
 /*end nav*/
 
+/* 메인 요소 스타일 */
 main {
-  background-color: aqua;
+  background-color: rgb(214, 228, 228);
   width: 80%;
   display: block;
   float: left;
   height: 700px;
 }
+/* 아티클 요소 스타일 */
 article {
-  background-color:dodgerblue;
+  background-color:rgb(185, 187, 188);
   height: 660px;
   margin: 20px;
 }
+/* 피규어 요소 스타일 */
 figure {
-  background-color:lemonchiffon;
-  height: 200px;
-  margin: 0px 0px;
-}
-p {
-  background-color: khaki;
-  height: 420px;
-  margin: 15px 20px;
+  background-color:rgb(234, 232, 211);
+  height: 150px;
+  margin: 0px;
 }
 
-h4 {
-  font-family: Arial, sans-serif;
-  white-space: nowrap;
-  color: #7a5ccc;
-  font-size: 36px;
+region1 {
+  background-color: rgb(234, 238, 228);
+  border-radius: 0px;
+  width: 50%;
+  display: block;
+  float: left;
+  height: 440px;
+}
+
+region2 {
+  background-color: rgb(216, 240, 224);
+  border-radius: 0px;
+  width: 50%;
+  display: block;
+  float: right;
+  height: 440px; 
+  position: relative; /* Position relative to parent element */
+}
+
+region3 {
+  background-color: rgb(236, 236, 240);
+  display: block;
+  height: 60px; 
+  margin: 10px;
+}
+
+/* 레전드 스타일 */
+legend {
   font-weight: bold;
-  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* 라벨 스타일 */
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-align: right; /* 라벨을 오른쪽으로 정렬 (선택사항) */
+}
+
+/* 입력 필드 스타일 */
+.label-1 {
+  width: 100px;  /* 라벨의 너비 지정 (선택사항) */
+}
+.label-2 {
+  width: auto; /* 라벨 너비 자동 조정 */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items:center; /* 왼쪽 정렬 */
+}
+
+/* 텍스트 입력(input)에 대한 스타일 */
+.input-1, .input-2, .input-3 {
+  width: 200px; /* 원하는 너비로 설정 */
+  padding: 8px;
+  margin-left: 30px; /* 왼쪽 여백 설정 */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input-1 {
+  width: 200px; /* 원하는 너비로 설정 */
+}
+.input-2 {
+  width: 40px;
+}
+.input-3 {
+  width: 100px;
+  margin-left: 0px; /* 왼쪽 여백 설정 */
+  text-align: right;
+}
+.input-4 {
+  width: 200px; /* 원하는 너비로 설정 */
+  height: 60px;
+  padding: 8px;
+  margin-left: 60px; /* 왼쪽 여백 설정 */
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 32px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* 입력 필드 포커스 시 스타일 */
+.input-1:focus,
+.input-2:focus,
+select:focus {
+  border-color: dodgerblue;
+  outline: none;
+}
+
+fieldset {
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+
+.select-wrapper {
+  display: inline-block;
+  vertical-align: top; /* 상단 정렬 */
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  margin-left: 50px; /* 왼쪽 여백 설정 */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="checkbox"] {
+  padding: 8px;
+  margin-left: 50px; /* 왼쪽 여백 설정 */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="checkbox"]:focus {
+  border-color: dodgerblue;
+  outline: none;
+}
+
+input[type="color"] {
+  z-index: 999; /* Ensure buttons stay on top of images */
+  cursor: pointer;
+}
+
+.container-card {
+  padding: 8px;
+  text-align: center;
+  height: auto;
+  border: 1px solid #adadad8a;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.062);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px; /* 필요에 따라 여백 조절 */
+  margin-left: auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+  margin-right: auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+  max-width: 600px; /* 최대 너비를 설정하여 너비를 줄임 */
+}
+.container-card .title {
+  font-size: 13px; /* 타이틀의 글꼴 크기 */
+  font-weight: bold; /* 타이틀의 글꼴 두껍게 */
+  margin-bottom: 8px; /* 타이틀 아래 여백 */
+}
+
+.sumtitle {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 30px; /* 왼쪽 여백 설정 */
+  margin-right: 30px; /* 오른쪽 여백 설정 */
+}
+
+.sumcontent {
+  font-size: 13px;
+  margin-left: 60px; /* 왼쪽 여백 설정 */
+}
+
+.sumamount {
+  font-size: 32px;
+  font-weight: bold;
+  color: red;
+  margin-left: 100px; /* 왼쪽 여백 설정 */
+}
+
+.form-page {
+  width: 100%;
+}
+
+.form-page .row {
+  width: 100%;
+  float: left;
+  padding: 8px 8px 2px 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.next, .previous, .submit {
+  background-color: #4CAF50; /* 배경색 */
+  color: white; /* 텍스트색 */
+  padding: 10px 20px; /* 내부 여백 */
+  border: none; /* 테두리 없음 */
+  border-radius: 5px; /* 테두리 모서리 둥글게 */
+  cursor: pointer; /* 마우스 커서 */
+  font-size: 16px; /* 글자 크기 */
+  transition: background-color 0.3s ease; /* 배경색 변경 시 부드러운 전환 */
+  margin-top: 10px; /* 버튼의 위쪽 여백 */
+}
+
+.next:hover, .previous:hover {
+  background-color: #45a049; /* 호버 시 배경색 변경 */
+}
+
+progress {
+  width: 500px; /* 프로그래스 바의 너비 */
+  height: 30px; /* 프로그래스 바의 높이 */
+  border: none; /* 테두리 없음 */
+  background-color: #f0f0f0; /* 바탕색 */
+  border-radius: 10px; /* 프로그래스 바의 모서리 둥글게 */
+  overflow: hidden; /* 내부 값이 넘치지 않도록 숨김 */
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0; /* 프로그래스 바의 배경색 */
+  border-radius: 10px; /* 프로그래스 바의 모서리 둥글게 */
+}
+
+progress::-webkit-progress-value {
+  background-color: #4CAF50; /* 프로그래스 바의 채워지는 부분의 색상 */
+  border-radius: 10px; /* 프로그래스 바의 모서리 둥글게 */
+}
+
+.calendar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* 캘린더 사이의 간격 조절 */
+  border-radius: 0px;
 }
 
 .piha-image-container {
@@ -119,6 +342,26 @@ h4 {
   right: 50px;
 }
 
+h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #6e8820;
+  font-style: italic;
+}
+
+h4 {
+  font-family: 'Franklin Gothic Medium', Arial, Helvetica, sans-serif;
+  color: #7a5ccc;
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 
+    -2px -2px 0 #d6e8b3,  
+    2px -2px 0 #d6e8b3,
+    -2px 2px 0 #d6e8b3,
+    2px 2px 0 #d6e8b3; /* 텍스트 주위에 흐림이나 그림자를 생성하여 테두리 효과 */
+}
+
 .h1 {
   white-space: nowrap;
   color: #6dd589;
@@ -142,6 +385,11 @@ h4 {
 .h3 {
   font-size: 24px;
   transform: perspective(400px) rotateX(20deg) rotateY(-25deg) rotateZ(-5deg) scale(1.5,1);
+}
+
+h5 {
+  margin: 15px;
+  font-size: 14px;
 }
 
 /* Mitre 10 Advertisement */

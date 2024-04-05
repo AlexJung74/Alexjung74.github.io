@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/5cca347ecc.js" crossorigin="anonymous"></script>
       <title>Piha Advertisement</title>
     </head>
 
@@ -64,29 +65,8 @@
           currentImage = 1;
         }
       }
-
+      
       var currentImageIndex = 0; // Variable representing the index of the current image
-
-      // 이미지 전환 함수
-      /*function slideImage() {
-  
-        // Make the previous image transparent.
-        images[currentImageIndex].style.opacity = '0';
-  
-        // Update the index of the current image and move to the next image.
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        // Make the next image appear.
-        images[currentImageIndex].style.opacity = '1';
-
-        // Call the function again after a certain amount of time to switch to the next image.
-        setTimeout(slideImage, 2000); // Set to change every 2 seconds (unit: milliseconds)
-
-        // Speed up the transition at certain intervals
-        if (currentImageIndex % 1 === 0) {
-          setTimeout(slideImage, 500); // Fast transition time (0.5 seconds)
-
-        }
-      }*/
 
         // Page reload function
         function reloadPage() {
@@ -100,12 +80,35 @@
 
         // Switch image at regular intervals
         setInterval(changeImage, 2000); // 2초마다 변경되도록 설정 (단위: 밀리초)
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var fromDate = document.getElementById('fromDate');
+        var toDate = document.getElementById('toDate');
+
+        fromDate.addEventListener('change', function() {
+          toDate.min = fromDate.value;
+        });
+
+        toDate.addEventListener('change', function() {
+          fromDate.max = toDate.value;
+        });
+      });
+      
+      function openPDF() {
+        // PDF 파일의 경로
+        var pdfPath = 'assets/Project1_YongsuokJUNG_1552620.pdf';
+        // 새 창에서 PDF 파일 열기
+        window.open(pdfPath, '_blank');
+      }
+
       </script>
 
       <content> <!-- custom -->
           <aside>
-            <div class="static-image-container">
-              <img src="assets/Miter500.jpg" alt="kitchen4" class="static-image" id="kitchen4">
+            <a class="static-image-container">
+              <a href="https://www.mitre10.co.nz/" target="_blank">
+                <img src="assets/Miter500.jpg" alt="kitchen4" class="static-image" id="kitchen4">
+              </a>
               <!-- Reload Button -->
               <button class="reload-button" onclick="reloadPage()">Reload</button>
               <div class="slideshow">
@@ -125,15 +128,332 @@
           </div>
           </aside>
           <main>
-              <article>
+              <article id="article">
                   <figure>
-                      <h4>Piha Lodge Booking System</h4>
+                    <button type="button" style = "float: left;"  onclick="openPDF()">Wireframe & Story Boards</button>
+                      <br><h1>Piha Lodge Booking System</h1><br>
+                      <progress value="25" max="100"></progress>
+                      <label for="articleColour" style="padding-left: 20px;">Color
+                        <input type="color" name="colorpicker" id="articleColour" onchange="changeBackgroundColor()" />
+                      </label>
                   </figure>
-                  <p>
-                      paragraph
-                  </p>
+                  <div id="form-page1" class="form-page" style="display: block">
+                    <region1>
+                      <br><br>
+                      <legend>Personal Information</legend><br><br>
+                      <label for="name-first" class="label-1" >First Name:</label>
+                      <input type="text" class="input-1" name="person" id="name-first" placeholder="John" required>
+                      <br>
+                      <label for="name-last" class="label-1" >Last Name:</label>
+                      <input type="text" class="input-1" name="person" id="name-last" placeholder="denver" required>
+                      <br>
+                      <label for="email" class="label-1" >Email:</label>
+                      <input type="email" class="input-1" name="email" id="email" placeholder="john.denver@example.co.nz" required>
+                      <br>
+                      <label for="phoneN" class="label-1" >Phone:</label>
+                      <input type="tel" name="tell" id="phoneN" placeholder="020-030-0000" pattern="(02[0-9]{1}-[0-9]{3,4}-[0-9]{3})">
+                      <br><br>
+                      <div class="select-wrapper">
+                        <label for="adult" class="label-2" >Number of Adults:</label>
+                        <select name="adult" id="adult">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="select-wrapper">
+                        <label for="child" class="label-2" >Number of Children:</label>
+                        <select name="child" id="child">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                      </div>
+                    </region1>
+                    <region2><br><br>
+                      <legend>Inquiries about room preparation</legend>
+                      <br>
+                      <fieldset>
+                        <h5>1. Do you need cooking facilities?</h5>
+                        <label for="radio-1y">
+                          <input type="radio" id="radio-1y" name="radio1" value="y" checked />
+                          Yes
+                        </label>
+                        <label for="radio-1n">
+                          <input type="radio" id="radio-1n" name="radio1" value="n" />
+                          No
+                        </label>
+                      </fieldset><br>
+                      <fieldset>
+                        <h5>2. Do you need to use equipments?</h5>
+                        <label for="radio-2y">
+                          <input type="radio" id="radio-2y" name="radio2" value="y" checked />
+                          Yes
+                        </label>
+                        <label for="radio-2n">
+                          <input type="radio" id="radio-2n" name="radio2" value="n" />
+                          No
+                        </label>
+                      </fieldset><br>
+                      <fieldset>
+                        <h5>3. Are you planning to bring your pet?</h5>
+                        <label for="radio-3y">
+                          <input type="radio" id="radio-3y" name="radio3" value="y" checked />
+                          Yes
+                        </label>
+                        <label for="radio-3n">
+                          <input type="radio" id="radio-3n" name="radio3" value="n" />
+                          No
+                        </label>
+                      </fieldset>
+                    </region2>
+                    <region3>
+                      <button class="next" type="button" onclick="showPage(2)">
+                        Next Page
+                      </button>
+                    </region3>
+                  </div>
+                  <!--second page-->
+                  <div id="form-page2" class="form-page" style="display: none">
+                    <region1>
+                      <br><br>
+                      <legend>> Select the date you wish to stay</legend><br><br>
+                      <div class="form-container">
+                        <div class="calendar">
+                          <label class="label-2" for="fromDate">From:</label>
+                          <input type="date" class="input-1" id="fromDate" name="fromDate">
+                        </div>
+                        <div class="calendar">
+                          <label class="label-2" for="toDate" style="padding-left: 20px;">To:</label>
+                          <input type="date" class="input-1" id="toDate" name="toDate">
+                        </div> <br>
+                      </div>
+                      <div id="dateRangeContainer">The number of nights selected is <span id="dateRange"></span></div>
+                      <br><br><br>
+                      <legend>> What time will you check in?</legend><br><br>
+                      <div class="checkinTime">
+                        <label  class="label-2" for="checkinTime">Check-in Time:</label>
+                        <input type="time" class="input-1" id="checkinTime" name="checkinTime">
+                      </div>
+                    </region1>
+                    <region2><br><br>
+                      <legend>> Select the number of rooms </legend><br><br>
+                      <label class="label-2" for="roomsAvail">Number of rooms available:</label>
+                      <input type="text" readonly class="input-2" name="roomsAvail" id="roomsAvail" value="5" autocomplete="off"> <!--Value는 DB값을 읽어야함-->
+                      <br>
+                      <div class="select-wrapper">
+                        <label class="label-2" for="roomsNeed">Number of rooms needed:</label>
+                        <select name="roomsNeed" id="roomsNeed">
+                        </select>
+                      </div><br>
+                      <input type="checkbox" style = "margin-left: 85px;" id ="nonSmoking"> Non smoking</label><br>
+                      <input type="checkbox" id="seaView"> Sea view</label><br><br>
+                      <label class="label-2" for="pricePer1" style="padding-right: 10px">Price per 1 room:</label>
+                      <input type="text" readonly class="input-3" name="pricePer1" id="pricePer1" value = "160"><span>&nbsp;NZD</span>
+                      <br><br>
+                      <fieldset>
+                        <label class="label-2" for="totalPrice"style="margin-top: 15px; font-size: 18px; font-weight: bold; padding-right: 20px" >Total Price:</label>
+                        <input type="text" readonly class="input-3" name="totalPrice" id="totalPrice" ><span>&nbsp;NZD</span>
+                        <br>
+                      </fieldset>
+                      <script>
+                      // roomsAvail 값 가져오기
+                      var roomsAvailValue = parseInt(document.getElementById('roomsAvail').value);
+                
+                      // roomsNeed 선택 요소 가져오기
+                      var roomsNeedSelect = document.getElementById('roomsNeed');
+                
+                      // roomsNeed의 새 옵션 추가
+                      for (var i = 1; i <= roomsAvailValue; i++) {
+                        var option = document.createElement('option');
+                        option.value = i;
+                        option.text = i;
+                        roomsNeedSelect.appendChild(option);
+                      }
+                      document.addEventListener('DOMContentLoaded', function() {
+                          // pricePer1과 roomsNeed 요소 가져오기
+                          var pricePer1Element = document.getElementById('pricePer1');
+                          var roomsNeedElement = document.getElementById('roomsNeed');
+                          
+                          // totalPrice 요소 가져오기
+                          var totalPriceElement = document.getElementById('totalPrice');
+                          var totalAmountElement = document.getElementById('totalAmount');
+                      
+                          // pricePer1 값과 roomsNeed 값을 읽어와서 totalPrice에 설정
+                          function updateTotalPrice() {
+                              var pricePer1 = parseFloat(pricePer1Element.value); // pricePer1 값을 숫자로 변환
+                              var roomsNeed = parseInt(roomsNeedElement.value); // roomsNeed 값을 정수로 변환
+                              
+                              // pricePer1과 roomsNeed를 곱한 값을 totalPrice에 설정
+                              var totalPrice = pricePer1 * roomsNeed;
+                              totalPriceElement.value = totalPrice.toFixed(2); // totalPrice를 소수점 둘째 자리까지 고정
+                              totalAmountElement.value = totalPrice.toFixed(2); // totalAmount를 소수점 둘째 자리까지 고정
+                          }
+                      
+                          // 페이지 로드시 totalPrice를 업데이트
+                          updateTotalPrice();
+                      
+                          // roomsNeed 값이 변경될 때마다 totalPrice를 업데이트
+                          roomsNeedElement.addEventListener('change', updateTotalPrice);
+                      });
+                      </script>
+                    </region2>
+                    <region3>
+                      <button class="previous" type="button" onclick="showPage(1)">
+                        Previous Page
+                      </button>
+                      <button class="next" type="button" onclick="showPage(3)">
+                        Next Page
+                      </button>
+                    </region3>
+                  </div>
+                  <!--page 3-->
+                  <div id="form-page3" class="form-page" style="display: none">
+                    <region1><br><br>
+                      <legend>> Payment</legend><br><br>
+                      <label for="cardNumber" class="label-2" >Credit Card Number:</label>
+                      <input type="text" class="input-1" name="cardNumber" id="cardNumber" style="padding-left: 50px; margin-left: 0px;" placeholder="0000 0000 0000 0000">
+                      <br>
+                      <div class="select-wrapper">
+                        <label for="mmyy" class="label-2" >MM / YY:</label>
+                        <select name="mm" id="mm">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select name="yy" id="yy">
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                          <option value="26">26</option>
+                          <option value="27">27</option>
+                          <option value="28">28</option>
+                        </select>
+                      </div> <br>
+                      <label for="cardholderName" class="label-2" >Cardholder Name:</label>
+                      <input type="text" class="input-1" name="cardholderName" id="cardholderName" style="margin-left: 15px;" placeholder="Doe">
+                      <br>
+                      <label for="cvv" class="label-1" >CVV:</label>
+                      <input type="text" class="input-1" name="cvv" id="cvv" placeholder="000">
+                      <br>
+                    </region1>
+                      <region2><br>
+                        <fieldset><br><br>
+                          <label class="label-2" for="totalAmount"style="margin-top: 36px; font-size: 32px; font-weight: bold; padding-right: 20px" >Total Amount</label><br><br><br>
+                          <input type="text" readonly class="input-4" name="totalAmount" id="totalAmount" ><span>NZD</span>
+                          <br><br><br><br>
+                        </fieldset>
+                    </region2>
+                    <region3>
+                      <button class="previous" type="button" onclick="showPage(2)">
+                        Previous Page
+                      </button>
+                      <button class="next" type="button" onclick="showPage(4)">
+                        Next Page
+                      </button>
+                    </region3>
+                  </div>
+                  <!--page 4-->
+                  <div id="form-page4" class="form-page" style="display: none">
+                    <region1><br><br>
+                      <legend>> Summary</legend><br><br>
+                      <div class="container-card">
+                        <div class="title">Customer Informatioin</div>
+                        <div> <!-- page data fields -->
+                          <div class="row">
+                            <span class = "sumtitle">Name: </span><span class = "sumcontent" id="summary-customerName"></span>
+                          </div>
+                          <div class="row">
+                            <span class = "sumtitle">Contact Info.</span> <br><span class = "sumcontent" id="summary-customerContact"></span>
+                            </div>
+                          <div class="row">
+                            <span class = "sumtitle">Number of Customers</span><br><span class = "sumcontent" id="summary-customerNum"></  span>
+                          </div>
+                          <div class="row">
+                            <span class = "sumtitle">Customer Answersn</span><br><span class = "sumcontent" id="summary-customerQuestion"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </region1>
+                      <region2><br>
+                        <div class="container-card">
+                          <div> <!-- page data fields -->
+                            <div class="row">
+                              <span class = "sumtitle">Duration</span><br> <span class = "sumcontent" id="summary-roomFromTo"></span> <span style="padding-left: 20px;" id="summary-dateRange">Days</span>
+                            </div>
+                            <div class="row">
+                              <span class = "sumtitle">Number Of Rooms: </span><br><span class = "sumcontent" id="summary-rooms"></span>
+                            </div>
+                            <div class="row">
+                              <span class = "sumtitle">Each Room Price: </span><br><span class = "sumcontent" id="summary-roomPrice"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="container-card">
+                          <div> <!-- page data fields -->
+                            <div class="row">
+                              <span class = "sumtitle">Payment Information</span><br> <span class = "sumcontent" id="summary-payment"></span> 
+                            </div>
+                            <div class="row">
+                              <span class = "sumtitle">Total Amount: </span><span class = "sumamount" id="summary-paymentAmuont"></span><span class = "sumcontent" > NZD</span>
+                            </div>
+                          </div>
+                        </div>
+                    </region2>
+                    <region3>
+                      <button class="previous" type="button" onclick="showPage(3)">
+                        Previous Page
+                      </button>
+                      <button class="submit" type="button" onclick="showPage(4)">
+                        Submit
+                      </button>
+                    </region3>
+                  </div>
               </article>
           </main>
       </content>
-      </body>
+      <script src="formPaging.js"></script>
+      <script>
+        function changeBackgroundColor() {
+              let article = document.getElementById("article");
+              let newColour = document.getElementById("articleColour").value;
+              article.style.backgroundColor = newColour;
+            }
+        // 날짜 선택이 변경될 때마다 기간을 업데이트하는 함수
+        function updateDateRange() {
+          var fromDate = new Date(document.getElementById("fromDate").value);
+          var toDate = new Date(document.getElementById("toDate").value);
+          var diffTime = toDate.getTime() - fromDate.getTime();
+          var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+          document.getElementById("dateRange").textContent = diffDays;
+        }
+        document.getElementById("fromDate").addEventListener("change", updateDateRange);
+        document.getElementById("toDate").addEventListener("change", updateDateRange);
+      </script>
+      
+    </body>
 </html>
+
